@@ -5,6 +5,14 @@ class Film
     public $anno;
     public $genere;
     public $regista;
+
+    public function stampaFilm()
+    {
+        echo "<h2>{$this->titolo}</h2>";
+        echo "<p><strong>Anno:</strong> {$this->anno}</p>";
+        echo "<p><strong>Genere:</strong> {$this->genere}</p>";
+        echo "<p><strong>Regista:</strong> {$this->regista}</p>";
+    }
 }
 
 
@@ -41,13 +49,11 @@ $Films = [$Batman, $Joker, $OldMan];
 
 <body>
     <h1>FIlM BELLISSIMI</h1>
-    <ul>
-        <?php
-        foreach ($Films as $indice => $film) {
-            echo "<li>$film->titolo $film->anno $film->genere $film->regista</li>";
-        }
-        ?>
-    </ul>
+    <?php
+    foreach ($Films as $film) {
+        $film->stampaFilm();
+    }
+    ?>
 
 </body>
 
